@@ -1,0 +1,48 @@
+@use 'variables' as v;
+@mixin centrar{
+    text-align: center;
+}
+h2{
+    color: v.$secondarycolor;
+    @include centrar;
+}
+.grid-nosotros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.item {
+    max-width: 400px;
+    text-align: center;
+
+    img {
+        width: 100%;
+        height: 250px;
+        border-radius: v.$radio-borde;
+        object-fit: cover;
+        box-shadow: v.$sombra-normal;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        border: 3px solid v.$secondarycolor;
+
+        &:hover {
+            transform: scale(1.05);
+            box-shadow: v.$sombra-hover;
+            border-color: v.$primarycolor;
+        }
+    }
+
+    .texto {
+        margin-top: 10px;
+
+        h2 {
+            font-size: 1.5rem;
+            color: v.$secondarycolor;
+        }
+    }
+}
+
+

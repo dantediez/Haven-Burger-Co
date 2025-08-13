@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
     
 </head>
 <body>
@@ -35,11 +37,42 @@
         </nav>
     </header>
 
-    <main>
+    <div class="promo-bar">
+    <p id="promo-text"></p>
+</div>
 
-    </main>
+<script>
+    const promos = [
+        "¡Promo 2x1 en hamburguesas todos los miércoles!",
+        "🍟 Combo burger + papas + bebida a solo $14990",
+        "🥗 Nueva opción sin TACC disponible",
+        "🎉 Descuento del 20% en tu primera compra online"
+    ];
+
+    let index = 0;
+    const promoText = document.getElementById("promo-text");
+
+    function changePromo() {
+        promoText.classList.remove("fade-in");
+        promoText.classList.add("fade-out");
+
+        setTimeout(() => {
+            promoText.textContent = promos[index];
+            promoText.classList.remove("fade-out");
+            promoText.classList.add("fade-in");
+
+            index = (index + 1) % promos.length;
+        }, 500); // tiempo de fade-out
+    }
+
+    promoText.textContent = promos[index];
+    index++;
+
+    setInterval(changePromo, 4000); // cambia cada 4 segundos
+</script>
+
     <section>
-        <h2>BIENVENIDOS</h2>
+        <h2 class="animate__animated animate__backInLeft  animate__slow">BIENVENIDOS</h2>
 
         <br>
         <p class="parrafo">En Haven Burger Co. creemos que una buena hamburguesa puede ser mucho más que comida: puede ser un refugio, una experiencia, un momento para disfrutar. Nacimos con la idea de crear un espacio donde cada persona encuentre su lugar, su sabor y su burger perfecta.</p>
@@ -51,6 +84,8 @@
     
     
     </section>
+
+    
     <footer>
-        <p class="bn">¡BIENVENIDO A NUESTRO MUNDO!</p>
+        <p class="bn">“Haven Burger Co. – ¡Sabor que te hace volver!”</p>
     </footer>

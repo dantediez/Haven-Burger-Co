@@ -1,0 +1,13 @@
+@media (max-width: 425px){
+    header{
+        h1{
+            font-size: 50px;
+        }
+    }
+
+    .info-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,42 @@
+@use 'variables' as v;
+
+header h1{
+    color: v.$secondarycolor;
+    background-color: v.$primarycolor;
+    background-clip: content-box;
+    font-size: 83px;
+    font-style: bold;
+    text-align: center;
+    font-variant: small-caps;
+}
+
+nav {
+    background-color: v.$primarycolor;
+    padding: 10px 0;
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+                li {
+                    margin: 0 15px;
+                        a{
+                            color: rgb(233, 146, 32);
+                            text-decoration: none;
+                            font-family: Arial, sans-serif;
+                            font-size: 20px;
+                                &:hover {
+                                    text-transform: uppercase;
+                                    font-weight: bolder;
+                                        }
+                        }
+                }
+            }
+}
+
+.barra{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
